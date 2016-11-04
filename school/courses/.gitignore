@@ -1,0 +1,12 @@
+*.pyc
+__pycache__
+myvenv
+db.sqlite3
+/static
+.DS_Store
+env
+.idea
+*.DS_Store
+.coverage
+htmlcov
+/blog/secret.py
