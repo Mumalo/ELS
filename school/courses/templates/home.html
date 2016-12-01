@@ -1,0 +1,34 @@
+
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block title %}
+    {{ object.title }}
+{% endblock %}
+
+{% block content %}
+<br>
+<div id="owl" class="owl-carousel owl-theme">
+    <div class="item">
+      <img src="{% static 'images/carousel/ed1.jpg' %}">
+    </div>
+
+    <div class="item">
+      <img src="{% static 'images/carousel/ed2.jpg' %}">
+    </div>
+
+    <div class="item">
+      <img src="{% static 'images/carousel/ed3.jpg' %}">
+    </div>
+
+    <div class="item">
+      <img src="{% static 'images/carousel/ed4.jpg' %}">
+    </div>
+
+    <div class="item">
+      <img src="{% static 'images/carousel/ed5.jpg'%}">
+    </div>
+</div>
+
+{% endblock %}

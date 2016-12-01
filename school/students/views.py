@@ -40,7 +40,7 @@ class StudentEnrollCourseView(LoginRequiredMixin, FormView):
                      self).form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy('student-course_detail',
+        return reverse_lazy('student_course_detail',
                             args=[self.course.id])
 
 class StudentCourseListView(LoginRequiredMixin, ListView):

@@ -19,9 +19,9 @@
             class="selected"{% endif %}>
                 <a href="{% url 'student_course_detail_module' object.id m.id %}">
                     <span>
-                        Module <span class="order">{{ m.order|add:1
-                        }}</span>
+                        Module <span class="order">{{ m.order|add:1 }}</span>
                     </span>
+
                     <br>
                     {{ m.title }}
                 </a>

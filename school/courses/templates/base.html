@@ -6,13 +6,35 @@
   <title>{% block title %}{% endblock %}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-  <link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">
+  <!--<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">-->
+  <!--<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">-->
+  <!--<link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">-->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/simple-sidebar.css' %}">
+
+   <!-- OWL Carousel css-->
+  <link rel="stylesheet" href="{% static 'css/owlcarousel/owl.carousel.css' %}">
+  <!-- Default Theme -->
+  <link rel="stylesheet" href="{% static 'css/owlcarousel/owl.theme.css' %}" >
+  <link rel="stylesheet" href="{% static 'css/owlcarousel/owl.transitions.css' %}" >
+  <link rel="stylesheet" href="{% static 'css/owlcarousel/custom_css.css' %}">
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn./bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!--<script src="{% static 'js/bootstrap.js' %}"></script>-->
+  <!--<script src="{% static 'js/bootstrap-extras.js' %}"></script>-->
+  <script src="{% static 'js/owlcarousel/owl.carousel.js' %}"></script>
+  <!--<script src="{% static 'js/main.js' %}"></script>-->
 
+    <!-- Carousel scripts -->
+  <script src="{% static 'js/owlcarousel/owl.carousel.js' %}"></script>
+  <!--<script src="{% static 'js/owlcarousel/carousel.js' %}"></script>-->
+  <script src="{% static 'js/main.js' %}"></script>
 
 
   <!--//faction Slider Components  -->
@@ -20,30 +42,35 @@
 </head>
 
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-   <nav class="navbar navbar-inverse">
-       <div class="container-fluid">
-           <div class="navbar-header">
-                   <a class="navbar-brand" href="index.html">
-                       <img src="{% static 'images/logo.png' %}" alt="Site Logo">
-                   </a>
-           </div>
+   	<!-- Fixed navbar -->
+	<div class="navbar navbar-inverse" id="header">
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+				<!--<a class="navbar-brand" href="{% url 'home' %}">-->
+					<img src="{% static 'images/logo.png' %}" alt="Site Logo">
+                </a>
+			</div>
+			<div class="navbar-collapse collapse">
 
-           <ul class="nav navbar-nav">
-               <li><a href="#" style="color: #0b9ff3">Home</a></li>
-               <li><a href="courses.html">Courses</a></li>
-               <li><a href="index.html">Contact</a></li>
-           </ul>
+				<ul class="nav navbar-nav pull-right mainNav">
+					<li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'course_list' %}">Courses</a></li>
+					<li><a href="contact.html">Contact</a></li>
+                    {% if request.user.is_authenticated %}
+                         <li><a href="{% url 'logout' %}" id="logout-button"><span class="glyphicon glyphicon-log-out"> Signout </span></a></li>
+                    {% else %}
+                         <li><a href="{% url 'login' %}" id="login-button"><span class="glyphicon glyphicon-log-in"> Signin</span></a></li>
 
-           <ul class="nav navbar-nav navbar-right">
-               {% if request.user.is_authenticated %}
-                    <li><a href="{% url 'logout' %}" id="logout-button"><span class="glyphicon glyphicon-log-out"> Signout </span></a></li>
-               {% else %}
-                   <li><a href="{% url 'login' %}" id="login-button"><span class="glyphicon glyphicon-log-in"> Signin </span></a></li>
+                    {% endif %}
+				</ul>
 
-               {% endif %}
-           </ul>
-       </div> <!-- End of Container-fluid -->
-   </nav> <!-- Navbar inverse -->
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+	<!-- /.navbar -->
 
 
        <div id="main-content">
@@ -51,7 +78,7 @@
               {% endblock %}
        </div>
 
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+   <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>-->
    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
     <script>
@@ -64,29 +91,29 @@
 </body>
 </html>
 
-   <!--<footer id="footer">-->
-           <!--<div class="container" id="footer2">-->
-               <!--<div class="row">-->
-                   <!--<div class="col-md-6 panel">-->
-                       <!--<div class="panel-body">-->
-                           <!--<p class="simpleNav">-->
-                               <!--<a href="index.html">Home</a>|-->
-                               <!--<a href="courses.html">Courses</a>|-->
-                               <!--<a href="index.html">Contact</a>|-->
-                           <!--</p>-->
-                       <!--</div>-->
-                   <!--</div>-->
+   <footer id="footer">
+           <div class="container" id="footer2">
+               <div class="row">
+                   <div class="col-md-6 panel">
+                       <div class="panel-body">
+                           <p class="simpleNav">
+                               <a href="index.html">Home</a>|
+                               <a href="courses.html">Courses</a>|
+                               <a href="index.html">Contact</a>|
+                           </p>
+                       </div>
+                   </div>
 
-                   <!--<div class="col-md-6 panel">-->
-                       <!--<div class="panel-body">-->
-                           <!--<p class="simpleNav" style="float: right">-->
-                                <!--Contact Us-->
-                           <!--</p>-->
-                       <!--</div>-->
-                   <!--</div>-->
-               <!--</div> &lt;!&ndash; End of row &ndash;&gt;-->
-            <!--</div> &lt;!&ndash; end of footer 2 &ndash;&gt;-->
-   <!--</footer>-->
+                   <div class="col-md-6 panel">
+                       <div class="panel-body">
+                           <p class="simpleNav" style="float: right">
+                                Contact Us
+                           </p>
+                       </div>
+                   </div>
+               </div> <!-- End of row -->
+            </div> <!-- end of footer 2 -->
+   </footer>
 
 
   <!-- JQuery Plugin-->

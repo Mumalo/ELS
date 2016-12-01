@@ -19,14 +19,6 @@ urlpatterns = [
    views.CourseDeleteView.as_view(),
    name='course_delete'),
 
-   url(r'^home/$',
-       views.home,
-       name='home' ),
-
-   url('^base/$',
-       views.base,
-       name='home'),
-
    url(r'^(?P<pk>\d+)/module/$',
         views.CourseModuleUpdateView.as_view(),
         name='course_module_update'),
@@ -48,12 +40,9 @@ url(r'^module/(?P<module_id>\d+)/content/(?P<model_name>\w+)/(?P<id>\d+)/$',
        views.ModuleContentListView.as_view(),
        name='module_content_list' ),
 
-   url(r'^$', views.CourseListView.as_view(),
-       name='course_list'),
+    url(r'^$', views.CourseListView.as_view(), name='course_list'),
 
-   url(r'^subject/(?P<subject>[\w-]+)/$',
-       views.CourseListView.as_view(),
-       name='course_list_subject'),
+   url(r'^subject/(?P<subject>[\w-]+)/$', views.CourseListView.as_view(), name='course_list_subject'),
 
    url(r'^(?P<slug>[\w-]+)/$',
        views.CourseDetailView.as_view(),

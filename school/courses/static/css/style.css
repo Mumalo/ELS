@@ -1,9 +1,19 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:500,300,400);
 
 
+#owl .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#owl{
+    height: 30%;
+}
 
 .navbar-inverse{
     background-color: transparent;
+    clear: both;
 }
 
 .navbar-inverse{
@@ -15,13 +25,20 @@
 .navbar-inverse .navbar-nav > li > a{
     color: #797979;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 400;
 }
+
+
+
 
 .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover{
     background: none;
     color: #0b9ff3;
+    /*padding-right: 10px;*/
+    /*padding-left: 15px;*/
 }
+
+
 
 .navbar-inverse .navbar-nav > .active > a {
         background: none;
@@ -113,12 +130,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page-intro{
-    background-color: #e5e5e5;
-    overflow: auto;
-    padding: 20px 0 20px 40px;
+    background-color: #0b9ff3;
+    /*overflow: auto;*/
+    padding: 5px 0 5px 40px;
     margin-top: 0px;
     margin-left: 0px;
-    /*width: 100%;*/
+    position: relative;
+    width: 100%;
 }
 
 
@@ -130,7 +148,22 @@ h1, h2, h3, h4, h5, h6 {
 
 body{
     overflow: auto;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #333;
 }
+a{
+    color: #57a9d9;
+    text-decoration: none;
+}
+
+.module{
+    /*overflow: auto;*/
+    padding:10px 20px;
+    float:left;
+}
+
 
 .module h3{
     margin: 30px 0 0;
@@ -150,61 +183,87 @@ body{
 }
 
 .contents{
-    width: 12%;
+    width: 16%;
     height: auto;
-    /*padding: 10px;*/
-    float: right;
-    background: #333;
+    padding: 10px;
+    float: left;
+    /*position: absolute;*/
+    cursor: pointer;
+    margin: 10px auto;
+    font-family: 'Roboto', sans-serif;
+
+
+    background: #f9f9f9;
+    border: 1px solid #e6e8ea;
     color: #fff;
+    /*box-shadow: 0 1px 0 rgba(0,0,0,0.2);*/
+    cursor: pointer;
+    outline: none;
     font-family: 'Roboto', sans-serif;
     /*margin-left: -71px;*/
      /*margin-bottom: -150px;*/
 }
 
+
+
 .contents ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.contents ul li{
-    margin: 0 0 10px 0;
-    padding: 4px 10px 10px;
-    overflow: auto;
-}
-
-.contents ul li.selected{
-    background: #3f3f3f;
-}
-
-.contents ul li:hover{
-    background: #3f3f3f;
-    cursor: move;
-}
-
-.contents ul span{
-    text-transform: uppercase;
-    color: #bbb;
-    font-size: 14px;
-}
-
-.contents ul a{
-    display: block;
-    color: #fff;
-    text-decoration: none;
-}
-
-.contents ul a:hover {
-    color:#4dcc43;
-}
-
-ul.content-types li {
     list-style:none;
-    float:left;
-    margin:10px;
-    background:#efefef;
-    padding:8px 14px;
+    margin:0;
+    padding:0;
+
+    background: #f9f9f9;
+    /*border-radius: 0 0 5px 5px;*/
+    /*border: 1px solid rgba(0,0,0,0.2);*/
+    transition: all 0.3s ease-out;
+    border-top: none;
+    border-bottom: none;
+
 }
+
+
+.contents ul li {
+    margin:0 0 1px 0;
+    padding:0px 10px 2px;
+    overflow:auto;
+    /*border-bottom: 1px solid rgba(0,0,0,0.2);*/
+}
+
+.contents ul span {
+    text-transform:uppercase;
+    color:#bbb;
+    font-size:14px;
+}
+
+
+.contents ul li a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 0;
+    /*padding: 10px 0;*/
+    border-bottom: 1px solid #e6e8ea;
+    margin-left: -10px;
+    margin-right: -10px;
+
+}
+
+.contents ul li:last-of-type a {
+    border: none;
+}
+
+.contents ul li:hover a{
+    /*background: #fff;*/
+    /*cursor: move;*/
+    color: #57a9d9;
+}
+
+.contents h3{
+    padding: 0;
+    margin-top: 0;
+    color: #333;
+    border-bottom: 1px solid #e6e8ea;
+}
+
 
 .hidden {
     display:none;
@@ -258,7 +317,7 @@ ul#course-modules li:hover {
 #module-contents input[type="submit"] {
     width:auto;
     background:none;
-    color:#3fad37;
+    color:#0b9ff3;
     margin:0 0 10px 10px;
     padding:0;
     text-transform:none;
@@ -281,8 +340,21 @@ ul#course-modules li:hover {
      float: right;
  }
 
+ .course-info {
+    border:1px solid #ccc;
+    padding:10px 20px 20px;
+    width:400px;
+    overflow:auto;
+    margin-bottom:20px;
+}
+
+ .course-info a{
+     margin-right: 10px;
+ }
+
+
 .panel {
-    background: #060a1b;
+    background: #0b9ff3;
     color: whitesmoke;
 }
 
@@ -299,6 +371,11 @@ ul#course-modules li:hover {
         text-align: left;
 
     }
+
+.helptext{
+    color:#ccc;
+    padding-left:20px;
+}
 
 @media (max-width: 767px) {
     #head.secondary {
@@ -324,7 +401,7 @@ form p {
 
 input[type=submit]{
     border-radius:5px;
-    background:#060a1b;
+    background:#0b9ff3;
     color:#fff;
     font-size:16px;
     text-transform:uppercase;
@@ -345,13 +422,23 @@ label {
 }
 
 a{
-    color: #3fad37;
+    color: #0b9ff3;
     text-decoration: none;
+}
+
+a.secondary-button {
+    border:3px solid #0b9ff3;
+    padding:10px 20px;
+    margin:10px 0;
+}
+
+input[type=submit]:hover {
+    background:#0b9ff3;
 }
 
 a.button{
     border-radius:5px;
-    background:#060a1b;
+    background:#0b9ff3;
     color:#fff;
     font-size:16px;
     text-transform:uppercase;
@@ -369,6 +456,10 @@ input, select, textarea{
     float: left;
     clear: both;
     width: 300px;
+}
+
+select {
+    width: 324px;
 }
 
 textarea{
@@ -411,12 +502,12 @@ body{
 
 }
 
-body {
-    font-family: 'Lato', sans-serif;
-    font-weight: normal;
-    overflow-x: hidden;
-    /*line-height: 1.6em;*/
-}
+/*body {*/
+    /*font-family: 'Lato', sans-serif;*/
+    /*font-weight: normal;*/
+    /*overflow-x: hidden;*/
+    /*!*line-height: 1.6em;*!*/
+/*}*/
 
 footer{
     position: absolute;
@@ -425,12 +516,12 @@ footer{
     height: 100px;
     width: 100%;
     /*width: 100%;*/
-    position: absolute;
+    /*position: absolute;*/
 }
 
 footer{
     border-top: 1px solid #e5e5e5;
-    background-color: #060a1b;
+    background-color: #0b9ff3;
 }
 
 
@@ -443,10 +534,14 @@ footer ul li {
 }
 
 .errorlist {
-    color:#ae2c2c;
-    margin:0;
+    color: #ae2c2c;
+    margin: 0;
 }
 
-
-
-
+ul.content-types li {
+    list-style:none;
+    float:left;
+    margin:10px;
+    background:#efefef;
+    padding:8px 14px;
+}

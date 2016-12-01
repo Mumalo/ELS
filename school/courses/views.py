@@ -12,11 +12,9 @@ from django.apps import apps
 from django.db.models import Count
 from students.forms import CourseEnrollForm
 from braces.views import CsrfExemptMixin, JSONRequestResponseMixin
-def home(request):
-    return render(request, 'home/home.html')
-
-def base(request):
-    return render(request, 'base.html')
+#
+# def base(request):
+#     return render(request, 'base.html')
 
 # Create Generic Views
 
@@ -27,6 +25,9 @@ def base(request):
 #     def get_queryset(self):
 #         qs = super(ManageCourseListView, self).get_queryset()
 #         return qs.filter(creator=self.request.user)  #Retrieve only courses created by the current user
+
+def home(request):
+    return render(request, 'home.html')
 
 
 class OwnerMixin(object):
@@ -39,11 +40,8 @@ class OwnerEditMixin(object):
         form.instance.creator = self.request.user
         return super(OwnerEditMixin, self).form_valid(form)
 
-class OwnerCourseMixin(OwnerMixin,
-                       LoginRequiredMixin):
+class OwnerCourseMixin(OwnerMixin, LoginRequiredMixin):
     model = Course
-    fields = ['subject', 'title', 'slug', 'overview']
-    success_url = reverse_lazy('manage_course_list')
 
 class OwnerCourseEditMixin(OwnerCourseMixin,
                            OwnerEditMixin):

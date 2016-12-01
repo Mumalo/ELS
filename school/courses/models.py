@@ -25,7 +25,7 @@ class Course(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=200, unique=True)
-    overview = models.CharField(max_length=250)
+    overview = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     students = models.ManyToManyField(User, related_name='courses_joined', blank=True)
 
@@ -78,8 +78,7 @@ class BaseItem(models.Model):
         return self.title
 
     def render(self):
-        return render_to_string('courses/content/{}'.format(
-            self._meta.model_name), {'item': self})
+        return render_to_string('courses/content/{}.html'.format(self._meta.model_name), {'item': self})
 
 class Image(BaseItem):
     file = models.ImageField(upload_to='files')
