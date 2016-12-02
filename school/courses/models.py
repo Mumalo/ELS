@@ -67,7 +67,7 @@ class Content(models.Model):
 
 class BaseItem(models.Model):
     creator = models.ForeignKey(User, related_name='%(class)s_related')
-    title = models.CharField(max_length=150)
+    title = models.CharField(max_length=250)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
