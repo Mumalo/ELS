@@ -49,7 +49,8 @@ class OwnerCourseEditMixin(OwnerCourseMixin,
     success_url = reverse_lazy('manage_course_list')
     template_name = 'courses/manage/course/form.html'
 
-class ManageCourseListView(OwnerCourseMixin, ListView):
+class ManageCourseListView(PermissionRequiredMixin, OwnerCourseMixin, ListView):
+    permission_required = 'courses.add_course'
     template_name = 'courses/manage/course/list.html'
 
 class CourseCreateView(PermissionRequiredMixin,

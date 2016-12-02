@@ -57,12 +57,12 @@
 				<ul class="nav navbar-nav pull-right mainNav">
 					<li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="{% url 'course_list' %}">Courses</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="#">Contact</a></li>
                     {% if request.user.is_authenticated %}
                          <li><a href="{% url 'logout' %}" id="logout-button"><span class="glyphicon glyphicon-log-out"> Signout </span></a></li>
                     {% else %}
                          <li><a href="{% url 'login' %}" id="login-button"><span class="glyphicon glyphicon-log-in"> Signin</span></a></li>
-
+                         <li><a href="{% url 'manage_course_list' %}"><span class=""> Manage Courses</span></a></li>
                     {% endif %}
 				</ul>
 
@@ -97,8 +97,8 @@
                    <div class="col-md-6 panel">
                        <div class="panel-body">
                            <p class="simpleNav">
-                               <a href="index.html">Home</a>|
-                               <a href="courses.html">Courses</a>|
+                               <a href="{% url 'home' %}">Home</a>|
+                               <a href="{% url 'course_list' %}">Courses</a>|
                                <a href="index.html">Contact</a>|
                            </p>
                        </div>
