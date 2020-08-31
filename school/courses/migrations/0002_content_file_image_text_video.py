@@ -19,8 +19,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(primary_key=True, serialize=False, verbose_name='ID', auto_created=True)),
                 ('object_id', models.IntegerField()),
-                ('content_type', models.ForeignKey(to='contenttypes.ContentType')),
-                ('module', models.ForeignKey(to='courses.Module', related_name='contents')),
+                ('content_type', models.ForeignKey(to='contenttypes.ContentType', on_delete=models.CASCADE)),
+                ('module', models.ForeignKey(to='courses.Module', related_name='contents', on_delete=models.CASCADE)),
             ],
         ),
         migrations.CreateModel(
@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),
                 ('file', models.FileField(upload_to='images')),
-                ('creator', models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='file_related')),
+                ('creator', models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='file_related', on_delete=models.CASCADE)),
             ],
             options={
                 'abstract': False,
@@ -45,7 +45,7 @@ class Migration(migrations.Migration):
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),
                 ('file', models.ImageField(upload_to='files')),
-                ('creator', models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='image_related')),
+                ('creator', models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='image_related', on_delete=models.CASCADE)),
             ],
             options={
                 'abstract': False,
@@ -59,7 +59,7 @@ class Migration(migrations.Migration):
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),
                 ('content', models.TextField()),
-                ('creator', models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='text_related')),
+                ('creator', models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='text_related', on_delete=models.CASCADE)),
             ],
             options={
                 'abstract': False,
@@ -73,7 +73,7 @@ class Migration(migrations.Migration):
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),
                 ('url', models.URLField()),
-                ('creator', models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='video_related')),
+                ('creator', models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='video_related', on_delete=models.CASCADE)),
             ],
             options={
                 'abstract': False,

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.forms import UserCreationForm
