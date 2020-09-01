@@ -1,0 +1,48 @@
+
+.customNavigation{
+  text-align: center;
+    margin-top: 0px;
+}
+
+.btn {
+    text-align: center;
+    height: 28px;
+}
+
+ .customNavigation a{
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+ .customNavigation a{
+    color: #FFF;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;/*IE7 life-saver */
+	margin: 5px;
+	padding: 3px 10px;
+	font-size: 12px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	background: #869791;
+	filter: Alpha(Opacity=50);/*IE7 fix*/
+	opacity: 0.5;
+ }
+
+ .customNavigation a:hover{
+     filter: Alpha(Opacity=100);/*IE7 fix*/
+	 opacity: 1;
+	 text-decoration: none;
+ }
+
+ .selected{
+     filter: Alpha(Opacity=100);/*IE7 fix*/
+	 opacity: 1;
+     background-color: #101010;
+
+ }

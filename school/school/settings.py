@@ -14,18 +14,13 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 from django.urls import reverse_lazy
 import environ
+import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'f_3e9--i-t^cwu=w&7$sx90d^ko)b=qflq)n*g*&ka!e%!#dd_'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -43,7 +38,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'students',
     'embed_video',
-
 )
 
 MIDDLEWARE = (
@@ -54,10 +48,12 @@ MIDDLEWARE = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 )
 
-ROOT_URLCONF = 'school.urls'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+ROOT_URLCONF = 'school.urls'
 
 
 TEMPLATES = [
@@ -91,6 +87,12 @@ WSGI_APPLICATION = 'school.wsgi.application'
 
 env = environ.Env()
 environ.Env.read_env()
+
+
+DEBUG = env("DEBUG", default=False, cast=bool)
+SECRET_KEY = env("SECRET_KEY")
+
+
 DATABASES = {
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
@@ -166,12 +168,18 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-
-STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 
 # Where to direct after login
 
 LOGIN_REDIRECT_URL = reverse_lazy('student_course_list')
+django_heroku.settings(locals())

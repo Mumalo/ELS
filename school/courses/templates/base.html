@@ -7,36 +7,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <!--<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">-->
-  <!--<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">-->
-  <!--<link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">-->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/simple-sidebar.css' %}">
 
    <!-- OWL Carousel css-->
-  <link rel="stylesheet" href="{% static 'css/owlcarousel/owl.carousel.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css">
   <!-- Default Theme -->
-  <link rel="stylesheet" href="{% static 'css/owlcarousel/owl.theme.css' %}" >
-  <link rel="stylesheet" href="{% static 'css/owlcarousel/owl.transitions.css' %}" >
-  <link rel="stylesheet" href="{% static 'css/owlcarousel/custom_css.css' %}">
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn./bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <!--<script src="{% static 'js/bootstrap.js' %}"></script>-->
-  <!--<script src="{% static 'js/bootstrap-extras.js' %}"></script>-->
-  <script src="{% static 'js/owlcarousel/owl.carousel.js' %}"></script>
-  <!--<script src="{% static 'js/main.js' %}"></script>-->
-
-    <!-- Carousel scripts -->
-  <script src="{% static 'js/owlcarousel/owl.carousel.js' %}"></script>
-  <!--<script src="{% static 'js/owlcarousel/carousel.js' %}"></script>-->
-  <script src="{% static 'js/main.js' %}"></script>
-
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.css" >
   <!--//faction Slider Components  -->
 
 </head>
@@ -57,7 +37,6 @@
 				<ul class="nav navbar-nav pull-right mainNav">
 					<li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="{% url 'course_list' %}">Courses</a></li>
-					<li><a href="#">Contact</a></li>
                     {% if request.user.is_authenticated %}
                          <li><a href="{% url 'logout' %}" id="logout-button"><span class="glyphicon glyphicon-log-out"> Signout </span></a></li>
                     {% else %}
@@ -80,6 +59,15 @@
 
    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>-->
    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+   <script src="http://maxcdn.bootstrapcdn./bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!--<script src="{% static 'js/owlcarousel/owl.carousel.js' %}"></script>-->
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+
 
     <script>
         $(document).ready(function() {
@@ -99,7 +87,6 @@
                            <p class="simpleNav">
                                <a href="{% url 'home' %}">Home</a>|
                                <a href="{% url 'course_list' %}">Courses</a>|
-                               <a href="index.html">Contact</a>|
                            </p>
                        </div>
                    </div>
