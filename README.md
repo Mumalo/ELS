@@ -24,49 +24,13 @@ Students can browse and enrol for courses.
   type python3 -m venv myvenv in the terminal (myvenv is the name of your virtual evnironment)
 5. Install requirements from the requirements.txt file by:
    i. Navigating to the directory containing requirements.txt and 
-   2. Type pip3 insytall -r requirements.txt in the terminal
-6. Set up a local mysql db 
+   ii. Type pip3 insytall -r requirements.txt in the terminal
 
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
-
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
-## Authors
-
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+1. After the above, set up a local mysql db and connect to the app
+2. Run migrations against your local db by: 
+    typing **python3 manage.py makemigrations** and **python3 manage.py migrate**
+3. Finally, run the app by typing python3 manage.py runserver
+  PS: Make sure you are in the directory containing manage.py when typing these commands
