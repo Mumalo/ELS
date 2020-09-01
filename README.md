@@ -24,7 +24,7 @@ Students can browse and enrol for courses.
   type python3 -m venv myvenv in the terminal (myvenv is the name of your virtual evnironment)
 5. Install requirements from the requirements.txt file by:
    i. Navigating to the directory containing requirements.txt and 
-   ii. Type pip3 insytall -r requirements.txt in the terminal
+   ii. Type pip3 install -r requirements.txt in the terminal
 
 
 ### Executing program
