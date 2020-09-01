@@ -34,3 +34,6 @@ Students can browse and enrol for courses.
     typing **python3 manage.py makemigrations** and **python3 manage.py migrate**
 3. Finally, run the app by typing python3 manage.py runserver
   PS: Make sure you are in the directory containing manage.py when typing these commands
+  
+  
+[Check app here](https://django-els.herokuapp.com/course/)
