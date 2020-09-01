@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 from django.urls import reverse_lazy
+import environ
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -88,6 +89,8 @@ WSGI_APPLICATION = 'school.wsgi.application'
 #     }
 # }
 
+env = environ.Env()
+environ.Env.read_env()
 DATABASES = {
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
@@ -95,9 +98,9 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'school_db',
-        'USER': 'root',
-        'PASSWORD': 'mumalo1993',
+        'NAME': env("DATABASE_NAME"),
+        'USER': env("DATABASE_USER"),
+        'PASSWORD': env("DATABASE_PASSWORD"),
         'HOST': '',
         'PORT': '',
     }
