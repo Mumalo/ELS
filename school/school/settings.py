@@ -183,3 +183,4 @@ STATICFILES_DIRS = (
 
 LOGIN_REDIRECT_URL = reverse_lazy('student_course_list')
 django_heroku.settings(locals())
+del DATABASES['default']['OPTIONS']['sslmode']
