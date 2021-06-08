@@ -10,7 +10,7 @@ django-heroku==0.3.1
 idna==2.10
 mysql-connector-python==8.0.21
 mysqlclient==2.0.1
-Pillow==7.2.0
+Pillow==8.2.0
 protobuf==3.13.0
 psycopg2==2.8.5
 PyMySQL==0.10.0
@@ -33,7 +33,7 @@ gunicorn==20.0.4
 idna==2.10
 mysql-connector-python==8.0.21
 mysqlclient==2.0.1
-Pillow==7.2.0
+Pillow==8.2.0
 protobuf==3.13.0
 psycopg2==2.8.5
 PyMySQL==0.10.0
